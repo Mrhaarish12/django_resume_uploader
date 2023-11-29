@@ -1,7 +1,22 @@
 from django import forms
 from .models import Resume
 
+GENDER_CHOICES = [
+ ('Male', 'Male'),
+ ('Female', 'Female')
+]
+
+JOB_CITY_CHOICE = [
+ ('Delhi', 'Delhi'),
+ ('Pune', 'Pune'),
+ ('Ranchi', 'Ranchi'),
+ ('Mumbai', 'Mumbai'),
+ ('Dhanbad', 'Dhanbad'),
+ ('Banglore', 'Banglore')
+]
 class ResumeForm(forms.ModelForm):
+    gender = forms.ChoiceField(choices=GENDER_CHOICES, widget=forms.RadioSelect)
+    job_city = forms.ModelChoiceField(label='Preferred Job Locations', choices=JOB_CITY_CHOICE, widget=forms.CheckboxSelectMultiple)
     class Meta:
         model = Resume
         fields = ['id','name','dob','gender','locality','city','pin','state','mobile','job_city','profile_image','myfile']
