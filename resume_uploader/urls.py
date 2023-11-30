@@ -25,4 +25,4 @@ urlpatterns = [
     path('myapp', views.HomeView.as_view(), name='home'),
     path('<int:pk>',views.CandidateView.as_view(),
          name='candidate')
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_root)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
