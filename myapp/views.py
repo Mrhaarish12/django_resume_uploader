@@ -18,5 +18,6 @@ class HomeView(View):
         
 
 class CandidateView(View):
-    def get(self, request):
+    def get(self, request,pk):
+        print(pk)
         return render(request,'myappp/candidate.html')
