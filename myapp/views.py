@@ -15,3 +15,8 @@ class HomeView(View):
         if form.is_valid():
             form.save()
             return render(request,'myapp/home.html', {'form':form})
+        
+
+class CandidateView(View):
+    def get(self, request):
+        return render(request,'myappp/candidate.html')
