@@ -7,6 +7,7 @@ from django.views import View
 class HomeView(View):
     def get(self,request):
         form = ResumeForm()
+        candidates = Resume.objects.all()
         return render(request,'myapp/home.html', {'form':form})
     
     def post(self,request):
