@@ -20,4 +20,5 @@ class HomeView(View):
 class CandidateView(View):
     def get(self, request,pk):
         print(pk)
-        return render(request,'myappp/candidate.html')
+        candidate = Resume.objects.get(pk=pk)
+        return render(request,'myappp/candidate.html',{'candidate':candidate})
