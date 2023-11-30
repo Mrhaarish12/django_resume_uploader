@@ -14,6 +14,7 @@ JOB_CITY_CHOICE = [
  ('Dhanbad', 'Dhanbad'),
  ('Banglore', 'Banglore')
 ]
+
 class ResumeForm(forms.ModelForm):
     gender = forms.ChoiceField(choices=GENDER_CHOICES, widget=forms.RadioSelect)
     job_city = forms.ModelChoiceField(label='Preferred Job Locations', choices=JOB_CITY_CHOICE, widget=forms.CheckboxSelectMultiple)
